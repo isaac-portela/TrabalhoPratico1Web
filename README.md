@@ -21,3 +21,5 @@ Logo do portal
 * O site deve ser responsivo e se adequar corretamente às telas de diferentes dispositivos, tanto desktops quanto tablets e smartphones. 
 * Cada aluno deve pensar o formato da versão mobile.
 * ENTREGA: Você deve entregar **apenas um arquivo compactado em formato ZIP** com todos os arquivos do site. Faça um teste do arquivo a ser enviado para garantir que sua entrega está correta.
+
+![Wireframe](/assets/img/wireframe-ecommerce.png "Exemplo da Wireframe").
