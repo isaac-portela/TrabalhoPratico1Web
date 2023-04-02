@@ -1,0 +1,112 @@
+@media screen and (max-width: 1708px){
+  .produto .content .comprar-carrinho button{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and ( max-width: 886px){
+  main .carrousel-filtro{
+    flex-direction: column;
+  }
+  main .carrousel-filtro .cx-filtro-produtos, main .carrousel-filtro .carrousel-lateral{
+    width: 90%;
+  }
+  main .carrousel-filtro .carrousel-lateral, main .carrousel-filtro .carrousel-lateral .carousel-inner{
+    height: inherit;
+  }
+  main #produtos{ 
+    padding: 0 50px ;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /*Menu Mobile */
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    justify-content: space-between;
+  }
+  header #pesquisa-geral{
+    width: 100%;
+  }
+  header .nav-bar{
+    display: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  header .nav-bar ul{
+    position: fixed;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+  }
+  header .nav-bar ul li{
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  header .nav-bar ul li a{
+    text-align: center;
+    width: 100%;
+  }
+  main{
+    margin-top: 140px;
+  }
+  .menu-icon{
+    display: block;
+    color: white;
+    width: 50px;
+    height: inherit;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    line-height: 60px;
+    z-index: 999;
+  }
+  .menu-icon i{
+    font-size: 1.7em;
+  }
+  #menuToggle:checked ~ label i:nth-child(2){
+    display: block; 
+  }
+  #menuToggle:checked ~ label i:nth-child(1){
+    display: none;
+  }
+  
+  #menuToggle:not(checked) ~ label i:nth-child(2){
+    display: none; 
+  }
+  #menuToggle:not(checked) ~ label i:nth-child(1){
+    display: block;
+  }
+  #menuToggle:checked ~ ul{
+    height: 100%;
+  }
+}
+
+@media screen and ( max-width: 680px){
+  main #menu{
+    font-size: 12px;
+  }
+  main #menu ul{
+    flex-direction: column;
+    gap: 20px;
+  }
+  main #produtos{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

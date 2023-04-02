@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+  --header-color: #383838;
+  --text-header-color: #FFFFFF;
+  --main-bg-color: #FFFFFF;
+  --color-desc-produto: #606060;
+}
+body{
+  font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden; 
+}
+/* Header */
+header{
+  display: flex;
+  height: 15vh;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 5px;
+  justify-content: center;
+  background-color: var(--header-color);
+}
+header img{
+  width: 200px;
+
+}
+header #pesquisa-geral{
+  height: 50%;
+  max-width: 400px;
+  width: 20%;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 20px;
+}
+header .nav-bar ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+header .nav-bar a {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-header-color);
+}
+header .nav-bar a:hover{
+  color: #D0021B;
+}
+header .nav-bar a span{
+  font-size: 10px;
+  line-height: 20px;
+}
+header .nav-bar a i{
+  font-size: 20px;
+}
+/*Header - Fim*/
+
+/*Menu Mobile */
+#menuToggle{
+  display: none;
+}
+.menu-icon{
+  display: none;
+}
+
+
+
+/* MAIN */
+main{
+  width: 100vw;
+  background-color: var(--main-bg-color);
+  box-sizing: border-box;
+}
+main #menu{
+  margin: 0;
+  padding: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 20px;
+}
+main #menu ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+}
+main #menu ul a{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--header-color);
+}
+main #menu ul a:hover{
+  color: #D0021B;
+}
+
+/*Estilizaçao do carrousel e filtro lateral */
+main .carrousel-filtro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+main .carrousel-filtro .cx-filtro-produtos{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 25em;
+  padding: 10px 20px;
+  border: 1px solid var(--header-color);
+  box-sizing: border-box;
+}
+main .carrousel-filtro .cx-filtro-produtos .cmp{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+main .carrousel-filtro .cx-filtro-produtos .cmp .filtro-produtos{
+ width: 100%;
+ height: 30px;
+}
+main .carrousel-filtro .cx-filtro-produtos .btn-search{
+ width: 100%;
+ margin: 20px 0 50px 0;
+ border-radius: 2px;
+ color: var(--text-header-color);
+ background-color: var(--header-color);
+}
+
+main .carrousel-filtro .carrousel-lateral{
+  width: 60%;
+  height: 25em;
+}
+main .carrousel-filtro .carrousel-lateral .carousel-inner{
+  width: 100%;
+  height: 25em;
+}
+main .carrousel-filtro .carrousel-lateral >  .carousel-inner >  .carousel-item >  img{
+  width: 100%;
+  height: 25em;
+}
+/* Produtos da loja*/
+
+main #produtos{ 
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 60% 30%;
+  gap: 20px;
+}
+
+main #produtos .caixa-produtos h1{
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 50px;
+}
+main #produtos .caixa-produtos .principais-produtos{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+main #produtos .caixa-produtos .principais-produtos .produto{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 540px;
+  gap: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+main #produtos .caixa-produtos .principais-produtos .produto:hover{
+  box-shadow: 0 0 0 1px #dedede;
+}
+main #produtos .caixa-produtos .principais-produtos .produto img{
+  width: 100%;
+}
+
+.title{
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 20px;
+}
+.desc{
+  color: var(--color-desc-produto);
+  text-transform: capitalize;
+  line-height: 18px;
+  font-size: 8px;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+}
+.det-price{
+  color: var(--color-desc-produto) ;
+  text-transform: capitalize;
+  line-height: 18px;
+  font-size: 10px;
+  text-align: left;
+}
+.det-price strong{
+  font-weight: bold;
+}
+.price{
+  font-size: 13px ;
+  color: #D0021B;
+}
+.comprar-carrinho{
+  align-self: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+}
+.comprar-carrinho button{
+  background-color: var(--header-color);
+  color: var(--main-bg-color);
+  width: 50%;
+}
+
+main #produtos .caixa-lateral{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+main #produtos .caixa-itens-mais-visitados{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 20px 5px;
+  flex-wrap: wrap;
+  gap: 50px;
+  box-shadow: 0 0 0 1px #dedede;
+}
+.caixa-itens-mais-visitados h2 {
+  text-align: center;
+}
+main #produtos .caixa-itens-mais-visitados .produto{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  width: 100%;
+}
+
+main #produtos .caixa-itens-mais-visitados .produto img{
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}  
+main #produtos .caixa-itens-mais-visitados .produto .content{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 10px;
+}  
+
+.caixa-newsletter{
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  gap: 20px;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0 0 0 1px #dedede;
+  height: 180px;
+}
+.caixa-newsletter span{
+  font-size: 8px;
+}
+.caixa-newsletter input{
+  width: 70%;
+}
+.caixa-newsletter button{
+  align-self: flex-end;
+  width: 30%;
+  min-width: 112px;
+}
+
+/*fotter*/
+.nav-link{
+  font-size: 12px;
+}
+.span-contato{
+  display: flex;
+  gap: 20px;
+}
+.span-contato i{
+  cursor: pointer;
+}
+.span-contato a{
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--header-color);
+}
+footer h3{
+  line-height: 25px;
+}
+footer p{
+  color: var(--main-bg-color);
+  font-size: 12px;
+}
