@@ -196,19 +196,26 @@ main #produtos .caixa-produtos .principais-produtos .produto img{
   line-height: 20px;
 }
 
-.estrelas input[type=radio] {
-  display: none;
+.estrelas {
+  font-size: 0; /* esconde os espaços entre as estrelas */
 }
-.estrelas label i.fa{
-  font-size: 1em
+
+.estrela {
+  display: inline-block;
+  font-size: 0;
 }
-.estrelas label i.fa:before{
-  content:'\f005';
-  color: #FC0;
+
+.estrela:before {
+  content: '\f005';
+  font-family: FontAwesome;
+  font-size: 15px; /* tamanho das estrelas */
+  color: #ddd; /* cor das estrelas apagadas */
 }
-.estrelas input[type=radio]:checked ~ label i.fa:before {
-  color: #CCC;
+
+.estrela.preenchida:before {
+  color: #ffdd00; /* cor das estrelas preenchidas */
 }
+
 .desc{
   color: var(--color-desc-produto);
   text-transform: capitalize;
