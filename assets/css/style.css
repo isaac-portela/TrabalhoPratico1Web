@@ -175,7 +175,7 @@ main #produtos .caixa-produtos .principais-produtos .produto{
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 540px;
+  height: 600px;
   gap: 20px;
   padding: 0 10px;
   box-sizing: border-box;
@@ -194,6 +194,20 @@ main #produtos .caixa-produtos .principais-produtos .produto img{
   text-transform: uppercase;
   text-align: left;
   line-height: 20px;
+}
+
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa{
+  font-size: 1em
+}
+.estrelas label i.fa:before{
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
 }
 .desc{
   color: var(--color-desc-produto);
@@ -310,10 +324,14 @@ main #produtos .caixa-itens-mais-visitados .produto .content{
   text-decoration: none;
   color: var(--header-color);
 }
+
 footer h3{
   line-height: 25px;
 }
 footer p{
   color: var(--main-bg-color);
   font-size: 12px;
+}
+footer .icone{
+  cursor: pointer;
 }
