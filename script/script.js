@@ -1,17 +1,4 @@
-
-const calculaQuantidadeEstrelas = (qtdEstrelas) =>{
-  let documentStar = '<div class="estrelas">';
-  for(let i = 0; i < 5; i++){
-    if(i < qtdEstrelas)
-    documentStar += `<span class="estrela preenchida"></span>`;  
-    else
-    documentStar += `<span class="estrela"></span>`;
-  }
-  
-  documentStar += '</div>';
-  
-  return documentStar;
-}
+import { calculaQuantidadeEstrelas} from './export.js';
 
 
 const obterCategorias = async() => {
@@ -23,10 +10,6 @@ const obterCategorias = async() => {
   } catch (error) {
     console.log('Ocorreu um erro ao obter as categorias:', error);
   }
-}
-
-const redirecionarDetalhes = (id) =>{
-  window.location.href = `./detalhes.html?id=${id}`;
 }
 
 const getAllProdutos = async() =>{
@@ -47,7 +30,7 @@ const getAllProdutos = async() =>{
         valorProdutoDozeVezes = valorProdutoDozeVezes.toFixed(2);
         
         let str = `
-          <div class="produto" onclick="redirecionarDetalhes('${produto.id}')">
+          <div class="produto" onclick="window.location.href = './detalhes.html?id=' + '${produto.id}'">
             <img src="${produto.image}" alt="${produto.title}">
             <h3 class="title">${produto.title}</h3>
             ${strEstrelas}

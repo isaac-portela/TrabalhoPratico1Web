@@ -1,4 +1,6 @@
-pesquisaProdutos = async (search) =>{
+import { calculaQuantidadeEstrelas} from './export.js';
+
+const pesquisaProdutos = async (search) =>{
   try{
     const respose = await fetch('https://fakestoreapi.com/products')
     const json = await respose.json();
@@ -43,21 +45,6 @@ const filtroAvancado = async (categoria, precoIni, precoFim) => {
 }
 
 
-
-const calculaQuantidadeEstrelas = (qtdEstrelas) =>{
-  let documentStar = '<div class="estrelas">';
-  for(let i = 0; i < 5; i++){
-    if(i < qtdEstrelas)
-    documentStar += `<span class="estrela preenchida"></span>`;  
-    else
-    documentStar += `<span class="estrela"></span>`;
-  }
-  
-  documentStar += '</div>';
-  
-  return documentStar;
-}
-
 const getProdutos = async(filtro, search, categoria, precoIni, precoFim) =>{
   let resultados = [];
   if(search){
@@ -80,7 +67,7 @@ const getProdutos = async(filtro, search, categoria, precoIni, precoFim) =>{
         let valorProdutoDozeVezes =(precoProduto * 1.10) / 12;
         valorProdutoDozeVezes = valorProdutoDozeVezes.toFixed(2);
         str += `
-          <div class="produto" onclick="redirecionarDetalhes('${produto.id}')">
+          <div class="produto" onclick="window.location.href = './detalhes.html?id=' + '${produto.id}'">
             <img src="${produto.image}" alt="${produto.title}">
             <h3 class="title">${produto.title}</h3>
             ${strEstrelas}
