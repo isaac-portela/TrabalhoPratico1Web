@@ -10,61 +10,7 @@ body{
   font-family: 'Press Start 2P', cursive;
   overflow-x: hidden; 
 }
-/* Header */
-header{
-  display: flex;
-  height: 15vh;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px 5px;
-  justify-content: center;
-  background-color: var(--header-color);
-}
-header img{
-  width: 200px;
 
-}
-header #pesquisa-geral{
-  height: 50%;
-  max-width: 400px;
-  width: 20%;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-right: 20px;
-}
-header .nav-bar ul{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-}
-
-header .nav-bar a {
-  display: flex;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--text-header-color);
-}
-header .nav-bar a:hover{
-  color: #D0021B;
-}
-header .nav-bar a span{
-  font-size: 10px;
-  line-height: 20px;
-}
-header .nav-bar a i{
-  font-size: 20px;
-}
-/*Header - Fim*/
-
-/*Menu Mobile */
-#menuToggle{
-  display: none;
-}
-.menu-icon{
-  display: none;
-}
 
 
 
@@ -186,6 +132,8 @@ main #produtos .caixa-produtos .principais-produtos .produto:hover{
 }
 main #produtos .caixa-produtos .principais-produtos .produto img{
   width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .title{
@@ -196,25 +144,6 @@ main #produtos .caixa-produtos .principais-produtos .produto img{
   line-height: 20px;
 }
 
-.estrelas {
-  font-size: 0; /* esconde os espaços entre as estrelas */
-}
-
-.estrela {
-  display: inline-block;
-  font-size: 0;
-}
-
-.estrela:before {
-  content: '\f005';
-  font-family: FontAwesome;
-  font-size: 15px; /* tamanho das estrelas */
-  color: #ddd; /* cor das estrelas apagadas */
-}
-
-.estrela.preenchida:before {
-  color: #ffdd00; /* cor das estrelas preenchidas */
-}
 
 .desc{
   color: var(--color-desc-produto);
@@ -277,6 +206,7 @@ main #produtos .caixa-itens-mais-visitados .produto{
   width: 100%;
   gap: 20px;
   width: 100%;
+  cursor: pointer;
 }
 
 main #produtos .caixa-itens-mais-visitados .produto img{

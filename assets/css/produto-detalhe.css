@@ -1,0 +1,46 @@
+.produto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.produto img{
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+.produto .card-body{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title{
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 20px;
+}
+.categoria{
+  font-size: 10px;
+}
+
+
+.desc-det{
+  color: var(--color-desc-produto);
+  text-transform: capitalize;
+  line-height: 18px;
+  font-size: 8px;
+  text-align: left;
+}
+.price{
+  font-size: 13px ;
+  color: #D0021B;
+}
+.comprar-carrinho-det{
+  width: 100%;
+}
+.comprar-carrinho button{
+  background-color: var(--header-color);
+  color: var(--main-bg-color);
+  width: 50%;
+}
