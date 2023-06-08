@@ -56,7 +56,7 @@ const getProdutosMaisVisitados = async () => {
       const strEstrelas = calculaQuantidadeEstrelas(qtdEstrelas);
       
       let str = `
-      <div class="produto" onclick="redirecionarDetalhes('${produto.id}')">
+      <div class="produto" onclick="window.location.href = './detalhes.html?id=' + '${produto.id}'">
         <img src="${produto.image}" alt="${produto.title}">
         <div class="content">
           <h3 class="title">${produto.title}</h3>
