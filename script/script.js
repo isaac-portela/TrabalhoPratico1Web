@@ -1,17 +1,4 @@
-
-const calculaQuantidadeEstrelas = (qtdEstrelas) =>{
-  let documentStar = '<div class="estrelas">';
-  for(let i = 0; i < 5; i++){
-    if(i < qtdEstrelas)
-    documentStar += `<span class="estrela preenchida"></span>`;  
-    else
-    documentStar += `<span class="estrela"></span>`;
-  }
-  
-  documentStar += '</div>';
-  
-  return documentStar;
-}
+import { calculaQuantidadeEstrelas} from './export.js';
 
 
 const obterCategorias = async() => {
@@ -25,13 +12,9 @@ const obterCategorias = async() => {
   }
 }
 
-const redirecionarDetalhes = (id) =>{
-  window.location.href = `./detalhes.html?id=${id}`;
-}
-
 const getAllProdutos = async() =>{
   const arrayCategorias = await obterCategorias();
-  console.log(arrayCategorias);
+  
   arrayCategorias.forEach(categoria => {
     fetch(`https://fakestoreapi.com/products/category/${categoria}`)
     .then(res=>res.json())
@@ -47,7 +30,7 @@ const getAllProdutos = async() =>{
         valorProdutoDozeVezes = valorProdutoDozeVezes.toFixed(2);
         
         let str = `
-          <div class="produto" onclick="redirecionarDetalhes('${produto.id}')">
+          <div class="produto" onclick="window.location.href = './detalhes.html?id=' + '${produto.id}'">
             <img src="${produto.image}" alt="${produto.title}">
             <h3 class="title">${produto.title}</h3>
             ${strEstrelas}
@@ -68,7 +51,6 @@ const getProdutosMaisVisitados = async () => {
   try {
     const response = await fetch('https://fakestoreapi.com/products?sort=desc&limit=6');
     const produtosMaisVisitados = await response.json();
-    console.log(produtosMaisVisitados);
     produtosMaisVisitados.forEach(produto => {
       const qtdEstrelas = Math.round(produto.rating.rate);
       const strEstrelas = calculaQuantidadeEstrelas(qtdEstrelas);
@@ -113,11 +95,14 @@ window.onload = () => {
   
   btnPesquisa.addEventListener('click', () => {
     const selectCategoriaSelected = document.getElementById('filtro-categoria').value;
-    const precoIni = document.getElementById('preco-ini').value;
-    const precoFim = document.getElementById('preco-fim').value;
+    let precoIni = document.getElementById('preco-ini').value;
+    let precoFim = document.getElementById('preco-fim').value;
     
-    if(precoIni !== '' && precoFim !== ''){
-      if(precoIni > precoFim){
+    precoIni = parseFloat(precoIni);
+    precoFim = parseFloat(precoFim);
+    
+    if(precoIni && precoFim){
+      if(precoIni > precoFim == true){
         alert('O preço inicial não pode ser maior que o preço final');
         return;
       }
