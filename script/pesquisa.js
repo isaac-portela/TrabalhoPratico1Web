@@ -122,8 +122,11 @@ window.onload = () => {
   
   btnPesquisa.addEventListener('click', () => {
     const selectCategoriaSelected = document.getElementById('filtro-categoria').value;
-    const precoIni = document.getElementById('preco-ini').value;
-    const precoFim = document.getElementById('preco-fim').value;
+    let precoIni = document.getElementById('preco-ini').value;
+    let precoFim = document.getElementById('preco-fim').value;
+    
+    precoIni = parseInt(precoIni);
+    precoFim = parseInt(precoFim);
     
     if(precoIni !== '' && precoFim !== ''){
       if(precoIni > precoFim){

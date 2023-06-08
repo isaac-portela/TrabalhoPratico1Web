@@ -31,7 +31,7 @@ const redirecionarDetalhes = (id) =>{
 
 const getAllProdutos = async() =>{
   const arrayCategorias = await obterCategorias();
-  console.log(arrayCategorias);
+  
   arrayCategorias.forEach(categoria => {
     fetch(`https://fakestoreapi.com/products/category/${categoria}`)
     .then(res=>res.json())
@@ -68,7 +68,6 @@ const getProdutosMaisVisitados = async () => {
   try {
     const response = await fetch('https://fakestoreapi.com/products?sort=desc&limit=6');
     const produtosMaisVisitados = await response.json();
-    console.log(produtosMaisVisitados);
     produtosMaisVisitados.forEach(produto => {
       const qtdEstrelas = Math.round(produto.rating.rate);
       const strEstrelas = calculaQuantidadeEstrelas(qtdEstrelas);
@@ -113,11 +112,14 @@ window.onload = () => {
   
   btnPesquisa.addEventListener('click', () => {
     const selectCategoriaSelected = document.getElementById('filtro-categoria').value;
-    const precoIni = document.getElementById('preco-ini').value;
-    const precoFim = document.getElementById('preco-fim').value;
+    let precoIni = document.getElementById('preco-ini').value;
+    let precoFim = document.getElementById('preco-fim').value;
     
-    if(precoIni !== '' && precoFim !== ''){
-      if(precoIni > precoFim){
+    precoIni = parseFloat(precoIni);
+    precoFim = parseFloat(precoFim);
+    
+    if(precoIni && precoFim){
+      if(precoIni > precoFim == true){
         alert('O preço inicial não pode ser maior que o preço final');
         return;
       }
