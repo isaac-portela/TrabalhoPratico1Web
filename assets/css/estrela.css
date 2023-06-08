@@ -1,0 +1,19 @@
+.estrelas {
+  font-size: 0; /* esconde os espaços entre as estrelas */
+}
+
+.estrela {
+  display: inline-block;
+  font-size: 0;
+}
+
+.estrela:before {
+  content: '\f005';
+  font-family: FontAwesome;
+  font-size: 15px; /* tamanho das estrelas */
+  color: #ddd; /* cor das estrelas apagadas */
+}
+
+.estrela.preenchida:before {
+  color: #ffdd00; /* cor das estrelas preenchidas */
+}
