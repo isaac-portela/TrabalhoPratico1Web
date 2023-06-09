@@ -1,0 +1,15 @@
+main{
+  min-height: 100vh;
+}
+main #produtos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.caixa-produtos{
+  width: 50%;
+}
+main .carrousel-filtro .cx-filtro-produtos{
+  height: auto;
+}
