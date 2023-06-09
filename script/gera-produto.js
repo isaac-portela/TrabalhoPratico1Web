@@ -1,5 +1,10 @@
 import { calculaQuantidadeEstrelas} from './export.js';
 
+
+const redirecionaPesquisa = (search) => {
+  window.location.href = `./pesquisa.html?${search}`;
+}
+
 window.onload = () => {
   const id = window.location.search.replace('?id=', '');
   
@@ -20,5 +25,13 @@ window.onload = () => {
     </div>
     `
     document.getElementById('detalhes').innerHTML = str;
+  });
+  
+  const pesquisa = document.getElementById('pesquisa-geral');
+  pesquisa.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter'){
+      const strSearch = `search=${pesquisa.value}`;
+      redirecionaPesquisa(strSearch);
+    }
   });
 }
